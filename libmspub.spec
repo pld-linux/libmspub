@@ -6,7 +6,7 @@ Summary:	A library providing ability to interpret and import Microsoft Publisher
 Summary(pl.UTF-8):	Biblioteka umożliwiająca interpretowanie i importowanie treści z Microsoft Publishera
 Name:		libmspub
 Version:	0.0.6
-Release:	1
+Release:	2
 License:	GPL v2+ or LGPL v2+ or MPL v1.1
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/%{name}-%{version}.tar.xz
