@@ -5,19 +5,18 @@
 Summary:	A library providing ability to interpret and import Microsoft Publisher content
 Summary(pl.UTF-8):	Biblioteka umożliwiająca interpretowanie i importowanie treści z Microsoft Publishera
 Name:		libmspub
-Version:	0.0.6
-Release:	2
-License:	GPL v2+ or LGPL v2+ or MPL v1.1
+Version:	0.1.0
+Release:	1
+License:	MPL v2.0
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/%{name}-%{version}.tar.xz
-# Source0-md5:	96a1f176abd683c6b1b02a08847c0616
+# Source0-md5:	d6d9239a7bb95df55300334afd99ceed
 URL:		http://www.freedesktop.org/wiki/Software/libmspub
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
 BuildRequires:	libicu-devel
+BuildRequires:	librevenge-devel >= 0.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	libwpd-devel >= 0.9
-BuildRequires:	libwpg-devel >= 0.2
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -39,9 +38,9 @@ Summary:	Development files for libmspub
 Summary(pl.UTF-8):	Pliki nagłówkowe dla libmspub
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libicu-devel
+Requires:	librevenge-devel >= 0.0
 Requires:	libstdc++-devel
-Requires:	libwpd-devel >= 0.9
-Requires:	libwpg-devel >= 0.2
 Requires:	zlib-devel
 
 %description devel
@@ -95,8 +94,7 @@ formatów. Aktualnie obsługiwane są XHTML i raw.
 %build
 %configure \
 	--disable-silent-rules \
-	%{?with_static_libs:--enable-static} \
-	--disable-werror
+	%{?with_static_libs:--enable-static}
 
 %{__make}
 
@@ -117,20 +115,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
-%attr(755,root,root) %{_libdir}/libmspub-0.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmspub-0.0.so.0
+%doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/libmspub-0.1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmspub-0.1.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libmspub-0.0.so
-%{_includedir}/libmspub-0.0
-%{_pkgconfigdir}/libmspub-0.0.pc
+%attr(755,root,root) %{_libdir}/libmspub-0.1.so
+%{_includedir}/libmspub-0.1
+%{_pkgconfigdir}/libmspub-0.1.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libmspub-0.0.a
+%{_libdir}/libmspub-0.1.a
 %endif
 
 %files apidocs
