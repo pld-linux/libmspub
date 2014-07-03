@@ -5,12 +5,12 @@
 Summary:	A library providing ability to interpret and import Microsoft Publisher content
 Summary(pl.UTF-8):	Biblioteka umożliwiająca interpretowanie i importowanie treści z Microsoft Publishera
 Name:		libmspub
-Version:	0.1.0
+Version:	0.1.1
 Release:	1
 License:	MPL v2.0
 Group:		Libraries
-Source0:	http://dev-www.libreoffice.org/src/%{name}-%{version}.tar.xz
-# Source0-md5:	d6d9239a7bb95df55300334afd99ceed
+Source0:	http://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
+# Source0-md5:	a86d607bc02eb8dd15ea88b3936b2080
 URL:		http://www.freedesktop.org/wiki/Software/libmspub
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
