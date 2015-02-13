@@ -5,22 +5,23 @@
 Summary:	A library providing ability to interpret and import Microsoft Publisher content
 Summary(pl.UTF-8):	Biblioteka umożliwiająca interpretowanie i importowanie treści z Microsoft Publishera
 Name:		libmspub
-Version:	0.1.1
-Release:	2
+Version:	0.1.2
+Release:	1
 License:	MPL v2.0
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
-# Source0-md5:	a86d607bc02eb8dd15ea88b3936b2080
+# Source0-md5:	050b8b29c2620fdbfb5d8561d4d08a11
 URL:		http://www.freedesktop.org/wiki/Software/libmspub
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
 BuildRequires:	libicu-devel
-BuildRequires:	librevenge-devel >= 0.0
+BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
+Requires:	librevenge >= 0.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,7 +40,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe dla libmspub
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libicu-devel
-Requires:	librevenge-devel >= 0.0
+Requires:	librevenge-devel >= 0.0.1
 Requires:	libstdc++-devel
 Requires:	zlib-devel
 
