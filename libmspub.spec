@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# static library
-#
+
 Summary:	A library providing ability to interpret and import Microsoft Publisher content
 Summary(pl.UTF-8):	Biblioteka umożliwiająca interpretowanie i importowanie treści z Microsoft Publishera
 Name:		libmspub
 Version:	0.1.2
-Release:	3
+Release:	4
 License:	MPL v2.0
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
@@ -68,6 +68,9 @@ Statyczna biblioteka libmspub.
 Summary:	libmspub API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libmspub
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API and internal documentation for libmspub library.
