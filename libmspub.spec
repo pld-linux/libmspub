@@ -16,7 +16,7 @@ BuildRequires:	boost-devel
 BuildRequires:	doxygen
 BuildRequires:	libicu-devel
 BuildRequires:	librevenge-devel >= 0.0.1
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -41,7 +41,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libicu-devel
 Requires:	librevenge-devel >= 0.0.1
-Requires:	libstdc++-devel
+Requires:	libstdc++-devel >= 6:4.7
 Requires:	zlib-devel
 
 %description devel
