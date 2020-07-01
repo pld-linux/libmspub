@@ -1,0 +1,36 @@
+diff -urN libmspub-0.1.4.orig/src/lib/libmspub_utils.cpp libmspub-0.1.4/src/lib/libmspub_utils.cpp
+--- libmspub-0.1.4.orig/src/lib/libmspub_utils.cpp	2018-02-28 12:54:49.000000000 +0100
++++ libmspub-0.1.4/src/lib/libmspub_utils.cpp	2020-07-01 21:33:45.830001845 +0200
+@@ -13,6 +13,8 @@
+ #include <cstring>
+ #include <string.h> // for memcpy
+ 
++#include <boost/cstdint.hpp>
++
+ #include <unicode/ucnv.h>
+ #include <unicode/utypes.h>
+ 
+diff -urN libmspub-0.1.4.orig/src/lib/MSPUBMetaData.cpp libmspub-0.1.4/src/lib/MSPUBMetaData.cpp
+--- libmspub-0.1.4.orig/src/lib/MSPUBMetaData.cpp	2018-02-28 12:54:49.000000000 +0100
++++ libmspub-0.1.4/src/lib/MSPUBMetaData.cpp	2020-07-01 21:33:32.903379959 +0200
+@@ -15,6 +15,8 @@
+ #include <ctime>
+ #include <string>
+ 
++#include <boost/cstdint.hpp>
++
+ #include "libmspub_utils.h"
+ 
+ libmspub::MSPUBMetaData::MSPUBMetaData()
+diff -urN libmspub-0.1.4.orig/src/lib/MSPUBMetaData.h libmspub-0.1.4/src/lib/MSPUBMetaData.h
+--- libmspub-0.1.4.orig/src/lib/MSPUBMetaData.h	2018-02-28 12:54:49.000000000 +0100
++++ libmspub-0.1.4/src/lib/MSPUBMetaData.h	2020-07-01 21:31:40.370430208 +0200
+@@ -14,6 +14,8 @@
+ #include <utility>
+ #include <vector>
+ 
++#include <boost/cstdint.hpp>
++
+ #include <librevenge/librevenge.h>
+ 
+ #include <librevenge-stream/librevenge-stream.h>

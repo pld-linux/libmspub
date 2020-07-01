@@ -11,6 +11,7 @@ License:	MPL v2.0
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
 # Source0-md5:	ac6fa9c1c05ece27c58c05e11786fd3a
+Patch0:		%{name}-types.patch
 URL:		http://www.freedesktop.org/wiki/Software/libmspub
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
@@ -94,6 +95,7 @@ formatów. Aktualnie obsługiwane są XHTML i raw.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
