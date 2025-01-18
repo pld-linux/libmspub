@@ -12,12 +12,16 @@ Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
 # Source0-md5:	ac6fa9c1c05ece27c58c05e11786fd3a
 Patch0:		%{name}-types.patch
+Patch1:		icu76.patch
 URL:		http://www.freedesktop.org/wiki/Software/libmspub
+BuildRequires:	autoconf >= 2.65
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
 BuildRequires:	libicu-devel
 BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	libstdc++-devel >= 6:4.7
+BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
@@ -94,9 +98,14 @@ formatów. Aktualnie obsługiwane są XHTML i raw.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P 0 -p1
+%patch -P 1 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
 %configure \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
