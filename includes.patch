@@ -1,0 +1,26 @@
+From 9781991ca5dcf1d13016615e2fc1730cf7e22750 Mon Sep 17 00:00:00 2001
+From: Heiko Becker <mail@heiko-becker.de>
+Date: Fri, 02 May 2025 21:42:42 +0200
+Subject: [PATCH] Add missing include
+
+int64_t is defined there. Fixes building with gcc 15.
+
+Change-Id: Ibd1260e7d0034b11e6ef46d1de62266800460921
+Reviewed-on: https://gerrit.libreoffice.org/c/libmspub/+/184917
+Tested-by: Michael Stahl <michael.stahl@allotropia.de>
+Reviewed-by: Michael Stahl <michael.stahl@allotropia.de>
+---
+
+diff --git a/src/lib/Coordinate.h b/src/lib/Coordinate.h
+index 4471f86..bac57a1 100644
+--- a/src/lib/Coordinate.h
++++ b/src/lib/Coordinate.h
+@@ -10,6 +10,8 @@
+ #ifndef INCLUDED_COORDINATE_H
+ #define INCLUDED_COORDINATE_H
+ 
++#include <cstdint>
++
+ #include "MSPUBConstants.h"
+ 
+ namespace libmspub
