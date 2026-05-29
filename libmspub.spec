@@ -5,16 +5,15 @@
 Summary:	A library providing ability to interpret and import Microsoft Publisher content
 Summary(pl.UTF-8):	Biblioteka umożliwiająca interpretowanie i importowanie treści z Microsoft Publishera
 Name:		libmspub
-Version:	0.1.4
-Release:	11
+Version:	0.1.5
+Release:	1
 License:	MPL v2.0
 Group:		Libraries
-Source0:	http://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
-# Source0-md5:	ac6fa9c1c05ece27c58c05e11786fd3a
+Source0:	https://dev-www.libreoffice.org/src/libmspub/%{name}-%{version}.tar.xz
+# Source0-md5:	eced70c3667dfe2a1e33b7c583be5e63
 Patch0:		%{name}-types.patch
 Patch1:		icu76.patch
-Patch2:		includes.patch
-URL:		http://www.freedesktop.org/wiki/Software/libmspub
+URL:		https://www.freedesktop.org/wiki/Software/libmspub
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	boost-devel
@@ -22,7 +21,7 @@ BuildRequires:	doxygen
 BuildRequires:	libicu-devel
 BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	libstdc++-devel >= 6:4.7
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
@@ -101,7 +100,6 @@ formatów. Aktualnie obsługiwane są XHTML i raw.
 %setup -q
 %patch -P 0 -p1
 %patch -P 1 -p1
-%patch -P 2 -p1
 
 %build
 %{__libtoolize}
@@ -132,12 +130,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libmspub-0.1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmspub-0.1.so.1
+%{_libdir}/libmspub-0.1.so.*.*.*
+%ghost %{_libdir}/libmspub-0.1.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libmspub-0.1.so
+%{_libdir}/libmspub-0.1.so
 %{_includedir}/libmspub-0.1
 %{_pkgconfigdir}/libmspub-0.1.pc
 
